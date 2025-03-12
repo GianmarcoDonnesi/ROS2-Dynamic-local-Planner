@@ -1,0 +1,11 @@
+[0.023s] Invoking command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner -- -j4 -l4
+[0.128s] [35m[1mConsolidate compiler generated dependencies of target dp_node[0m
+[0.178s] [ 50%] [32mBuilding CXX object CMakeFiles/dp_node.dir/src/dp_node.cpp.o[0m
+[6.592s] [100%] [32m[1mLinking CXX executable dp_node[0m
+[6.916s] /usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+[6.916s] (.text+0x1b): undefined reference to `main'
+[6.930s] collect2: error: ld returned 1 exit status
+[6.941s] gmake[2]: *** [CMakeFiles/dp_node.dir/build.make:183: dp_node] Error 1
+[6.942s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/dp_node.dir/all] Error 2
+[6.945s] gmake: *** [Makefile:146: all] Error 2
+[6.951s] Invoked command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner -- -j4 -l4
