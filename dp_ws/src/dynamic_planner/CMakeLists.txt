@@ -12,6 +12,21 @@ find_package(sensor_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
+add_executable(dp_node src/dp_node.cpp)
+
+ament_target_dependencies(dp_node
+  rclcpp
+  sensor_msgs
+  nav_msgs
+  geometry_msgs
+)
+
+install(TARGETS
+  dp_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights

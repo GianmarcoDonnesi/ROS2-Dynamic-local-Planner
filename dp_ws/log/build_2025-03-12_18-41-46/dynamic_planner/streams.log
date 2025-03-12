@@ -1,0 +1,33 @@
+[0.020s] Invoking command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner': /usr/bin/cmake /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/src/dynamic_planner -DCMAKE_INSTALL_PREFIX=/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner
+[0.507s] -- The C compiler identification is GNU 11.4.0
+[1.561s] -- The CXX compiler identification is GNU 11.4.0
+[1.611s] -- Detecting C compiler ABI info
+[1.774s] -- Detecting C compiler ABI info - done
+[1.782s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.785s] -- Detecting C compile features
+[1.788s] -- Detecting C compile features - done
+[1.797s] -- Detecting CXX compiler ABI info
+[1.925s] -- Detecting CXX compiler ABI info - done
+[1.931s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.931s] -- Detecting CXX compile features
+[1.933s] -- Detecting CXX compile features - done
+[1.947s] [31mCMake Error at CMakeLists.txt:9 (find_package):
+[1.948s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[1.948s]   has asked CMake to find a package configuration file provided by
+[1.948s]   "ament_cmake", but CMake did not find one.
+[1.948s] 
+[1.948s]   Could not find a package configuration file provided by "ament_cmake" with
+[1.948s]   any of the following names:
+[1.948s] 
+[1.949s]     ament_cmakeConfig.cmake
+[1.949s]     ament_cmake-config.cmake
+[1.949s] 
+[1.949s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[1.949s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[1.949s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[1.949s]   has been installed.
+[1.949s] 
+[1.949s] [0m
+[1.949s] -- Configuring incomplete, errors occurred!
+[1.949s] See also "/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner/CMakeFiles/CMakeOutput.log".
+[1.961s] Invoked command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner' returned '1': /usr/bin/cmake /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/src/dynamic_planner -DCMAKE_INSTALL_PREFIX=/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner
