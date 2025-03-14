@@ -1,2 +1,1 @@
-source;share/dynamic_planner/environment/ament_prefix_path.sh
-source;share/dynamic_planner/environment/path.sh
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner/ament_cmake_environment_hooks/local_setup.dsv

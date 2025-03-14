@@ -1,0 +1,17 @@
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/lib/dynamic_planner/dp_node
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/lib/dynamic_planner/tf_broadcaster
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/ament_index/resource_index/package_run_dependencies/dynamic_planner
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/ament_index/resource_index/parent_prefix_path/dynamic_planner
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/ament_prefix_path.sh
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/ament_prefix_path.dsv
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/path.sh
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/path.dsv
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.bash
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.sh
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.zsh
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.dsv
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/package.dsv
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/ament_index/resource_index/packages/dynamic_planner
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/cmake/dynamic_plannerConfig.cmake
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/cmake/dynamic_plannerConfig-version.cmake
+/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/package.xml

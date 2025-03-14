@@ -28,6 +28,8 @@ public:
       "/global_cost_map",
       10);
 
+    path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/planned_path", 10);
+
     RCLCPP_INFO(this->get_logger(), "Dynamic Planner Node started.");
 
     initGlobalMap();
