@@ -2,32 +2,31 @@
 #include <sensor_msgs/msg/laser_scan.hpp>
 #include <nav_msgs/msg/occupancy_grid.hpp>
 #include <nav_msgs/msg/path.hpp>
+#include <nav_msgs/msg/odometry.hpp>
 #include <geometry_msgs/msg/pose_stamped.hpp>
-#include <cmath> 
+#include <cmath>
 #include <limits>
-#include <queue>      
-#include <vector>     
-#include <algorithm>  
+#include <queue>
+#include <vector>
+#include <algorithm>
 
 class DynamicPlannerNode : public rclcpp::Node
 {
 public:
   DynamicPlannerNode()
-  : Node("dp_node") 
+  : Node("dp_node"),
+    robot_x_(0.0),
+    robot_y_(0.0)
   {
     laser_sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
       "/scan",
       10,
       std::bind(&DynamicPlannerNode::laserCallback, this, std::placeholders::_1));
 
-    local_map_pub_ = this->create_publisher<nav_msgs::msg::OccupancyGrid>(
-      "/local_cost_map",
-      10);
+    odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>("/odom", 10, std::bind(&DynamicPlannerNode::odomCallback, this, std::placeholders::_1));
 
-    global_map_pub_ = this->create_publisher<nav_msgs::msg::OccupancyGrid>(
-      "/global_cost_map",
-      10);
-
+    local_map_pub_ = this->create_publisher<nav_msgs::msg::OccupancyGrid>("/local_cost_map", 10);
+    global_map_pub_ = this->create_publisher<nav_msgs::msg::OccupancyGrid>("/global_cost_map", 10);
     path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/planned_path", 10);
 
     RCLCPP_INFO(this->get_logger(), "Dynamic Planner Node started.");
@@ -40,6 +39,38 @@ public:
   }
 
 private:
+  void odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg)
+  {
+    robot_x_ = msg->pose.pose.position.x;
+    robot_y_ = msg->pose.pose.position.y;
+  }
+
+  void laserCallback(const sensor_msgs::msg::LaserScan::SharedPtr scan_msg)
+  {
+    auto local_map = buildLocalMap(scan_msg);
+    local_map_pub_->publish(local_map);
+
+    updateGlobalMap(local_map, robot_x_, robot_y_);
+    global_map_pub_->publish(global_map_);
+  }
+
+  void planTimerCallback()
+  {
+    double start_x = robot_x_;
+    double start_y = robot_y_;
+    double goal_x  = -robot_x_; 
+    double goal_y  = -robot_y_;
+
+    int goal_mx = worldToMapX(goal_x, global_map_);
+    int goal_my = worldToMapY(goal_y, global_map_);
+
+    computeDijkstraHeuristicEmpty(goal_mx, goal_my);
+
+    auto path = runAStar(global_map_, start_x, start_y, goal_x, goal_y);
+    path.header.stamp = this->now();
+    path.header.frame_id = "map";
+    path_pub_->publish(path);
+  }
 
   void initGlobalMap()
   {
@@ -51,27 +82,11 @@ private:
     global_map_.info.resolution = resolution;
     global_map_.info.width = width;
     global_map_.info.height = height;
-
     global_map_.info.origin.position.x = -(width * resolution) / 2.0;
     global_map_.info.origin.position.y = -(height * resolution) / 2.0;
 
     global_map_.data.resize(width * height, 0);
   }
-
-  void laserCallback(const sensor_msgs::msg::LaserScan::SharedPtr scan_msg)
-  {
-    auto local_map = buildLocalMap(scan_msg);
-
-    local_map_pub_->publish(local_map);
-
-    double robot_x = 0.0;  
-    double robot_y = 0.0;
-
-    updateGlobalMap(local_map, robot_x, robot_y);
-
-    global_map_pub_->publish(global_map_);
-  }
-
 
   nav_msgs::msg::OccupancyGrid buildLocalMap(const sensor_msgs::msg::LaserScan::SharedPtr &scan_msg)
   {
@@ -80,13 +95,12 @@ private:
     grid.header.frame_id = "base_link";  
 
     double resolution = 0.05;
-    int width = 200;         
+    int width = 200;
     int height = 200;
 
     grid.info.resolution = resolution;
     grid.info.width = width;
     grid.info.height = height;
-
     grid.info.origin.position.x = - (width * resolution) / 2.0;
     grid.info.origin.position.y = - (height * resolution) / 2.0;
 
@@ -110,7 +124,7 @@ private:
       if (mx >= 0 && mx < width && my >= 0 && my < height)
       {
         int index = my * width + mx;
-        grid.data[index] = 100; 
+        grid.data[index] = 100;
       }
     }
 
@@ -119,7 +133,6 @@ private:
 
   void updateGlobalMap(const nav_msgs::msg::OccupancyGrid & local_map, double robot_x, double robot_y)
   {
-  
     for (int ly = 0; ly < (int)local_map.info.height; ++ly)
     {
       for (int lx = 0; lx < (int)local_map.info.width; ++lx)
@@ -127,7 +140,6 @@ private:
         int local_index = ly * local_map.info.width + lx;
         if (local_map.data[local_index] == 100)
         {
-        
           double wx = (lx * local_map.info.resolution) + local_map.info.origin.position.x;
           double wy = (ly * local_map.info.resolution) + local_map.info.origin.position.y;
 
@@ -146,27 +158,7 @@ private:
         }
       }
     }
-
     global_map_.header.stamp = this->now();
-  }
-
-  void planTimerCallback()
-  {
-  
-    double start_x = 0.0;
-    double start_y = 0.0;
-    double goal_x  = 2.0; 
-    double goal_y  = 2.0;
-
-    int goal_mx = worldToMapX(goal_x, global_map_);
-    int goal_my = worldToMapY(goal_y, global_map_);
-
-    computeDijkstraHeuristicEmpty(goal_mx, goal_my);
-
-    auto path = runAStar(global_map_, start_x, start_y, goal_x, goal_y);
-    path.header.stamp = this->now();
-    path.header.frame_id = "map";  
-    path_pub_->publish(path);
   }
 
   void computeDijkstraHeuristicEmpty(int goal_mx, int goal_my)
@@ -214,7 +206,7 @@ private:
           continue;
         }
 
-        float step_cost = std::sqrt(nb.first*nb.first + nb.second*nb.second);
+        float step_cost = std::sqrt(nb.first * nb.first + nb.second * nb.second);
         float new_dist = cdist + step_cost;
         int nindex = indexOf(nx, ny);
 
@@ -230,7 +222,6 @@ private:
       dijkstra_heuristic_[i] *= resolution;
     }
   }
-
 
   nav_msgs::msg::Path runAStar(
     const nav_msgs::msg::OccupancyGrid & map,
@@ -249,7 +240,7 @@ private:
       return path_result;
     }
 
-    int width  = map.info.width;
+    int width = map.info.width;
     int height = map.info.height;
 
     std::vector<float> g_cost(width * height, std::numeric_limits<float>::infinity());
@@ -259,7 +250,6 @@ private:
     auto indexOf = [&](int x, int y){ return y * width + x; };
     int start_index = indexOf(start_mx, start_my);
     g_cost[start_index] = 0.0f;
-
 
     struct Cell {
       int x, y;
@@ -271,7 +261,6 @@ private:
     float h_start = dijkstra_heuristic_[start_index];
     open_list.push({start_mx, start_my, h_start});
 
-    //8-direction neighbors
     std::vector<std::pair<int,int>> neighbors = {
       {1,0}, {-1,0}, {0,1}, {0,-1},
       {1,1}, {1,-1}, {-1,1}, {-1,-1}
@@ -295,7 +284,8 @@ private:
         break;
       }
 
-      for (auto &nb : neighbors) {
+      for (auto &nb : neighbors)
+      {
         int nx = current.x + nb.first;
         int ny = current.y + nb.second;
         if (!validCell(nx, ny, map)) {
@@ -309,13 +299,11 @@ private:
           continue;
         }
 
-        float step = std::sqrt(nb.first*nb.first + nb.second*nb.second);
+        float step = std::sqrt(nb.first * nb.first + nb.second * nb.second);
         float cost_to_nb = g_cost[cindex] + step;
-
         if (cost_to_nb < g_cost[nindex]) {
           g_cost[nindex] = cost_to_nb;
           parent[nindex] = cindex;
-
           float h = dijkstra_heuristic_[nindex];
           float f = cost_to_nb + h;
           open_list.push({nx, ny, f});
@@ -333,7 +321,6 @@ private:
         current = parent[current];
       }
       std::reverse(path_indices.begin(), path_indices.end());
-
       for (int idx : path_indices) {
         int x = idx % width;
         int y = idx / width;
@@ -349,7 +336,6 @@ private:
     {
       RCLCPP_WARN(this->get_logger(), "No path found by A*.");
     }
-
     return path_result;
   }
 
@@ -358,7 +344,7 @@ private:
   bool validCell(int mx, int my, const nav_msgs::msg::OccupancyGrid & map)
   {
     if (mx < 0 || my < 0) return false;
-    if (mx >= (int)map.info.width || my >= (int)map.info.height) return false;
+    if (mx >= static_cast<int>(map.info.width) || my >= static_cast<int>(map.info.height)) return false;
     return true;
   }
 
@@ -390,17 +376,18 @@ private:
     return origin_y + (my + 0.5) * res;
   }
 
-
   rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr laser_sub_;
+  rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odom_sub_;
   rclcpp::Publisher<nav_msgs::msg::OccupancyGrid>::SharedPtr local_map_pub_;
   rclcpp::Publisher<nav_msgs::msg::OccupancyGrid>::SharedPtr global_map_pub_;
   rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr path_pub_;
-
-  nav_msgs::msg::OccupancyGrid global_map_;
-
   rclcpp::TimerBase::SharedPtr timer_;
 
+  nav_msgs::msg::OccupancyGrid global_map_;
   std::vector<float> dijkstra_heuristic_;
+
+  double robot_x_{0.0};
+  double robot_y_{0.0};
 };
 
 int main(int argc, char **argv)

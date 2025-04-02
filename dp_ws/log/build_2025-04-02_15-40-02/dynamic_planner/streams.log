@@ -1,0 +1,32 @@
+[0.039s] Invoking command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner': /usr/bin/cmake --build /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner -- -j4 -l4
+[0.366s] [35m[1mConsolidate compiler generated dependencies of target tf_broadcaster[0m
+[0.408s] [35m[1mConsolidate compiler generated dependencies of target dp_node[0m
+[0.412s] [35m[1mConsolidate compiler generated dependencies of target controller_node[0m
+[0.474s] [ 16%] [32mBuilding CXX object CMakeFiles/dp_node.dir/src/dp_node.cpp.o[0m
+[0.474s] [ 50%] Built target controller_node
+[0.517s] [ 83%] Built target tf_broadcaster
+[24.482s] [100%] [32m[1mLinking CXX executable dp_node[0m
+[25.675s] [100%] Built target dp_node
+[25.714s] Invoked command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner' returned '0': /usr/bin/cmake --build /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner -- -j4 -l4
+[25.757s] Invoking command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner': /usr/bin/cmake --install /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner
+[25.773s] -- Install configuration: ""
+[25.773s] -- Execute custom install script
+[25.774s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/lib/dynamic_planner/dp_node
+[25.776s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/lib/dynamic_planner/tf_broadcaster
+[25.779s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/lib/dynamic_planner/controller_node
+[25.781s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/ament_index/resource_index/package_run_dependencies/dynamic_planner
+[25.782s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/ament_index/resource_index/parent_prefix_path/dynamic_planner
+[25.782s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/ament_prefix_path.sh
+[25.782s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/ament_prefix_path.dsv
+[25.782s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/path.sh
+[25.782s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/path.dsv
+[25.782s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.bash
+[25.782s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.sh
+[25.783s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.zsh
+[25.783s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.dsv
+[25.783s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/package.dsv
+[25.808s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/ament_index/resource_index/packages/dynamic_planner
+[25.808s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/cmake/dynamic_plannerConfig.cmake
+[25.809s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/cmake/dynamic_plannerConfig-version.cmake
+[25.809s] -- Up-to-date symlink: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/package.xml
+[25.812s] Invoked command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner' returned '0': /usr/bin/cmake --install /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner
