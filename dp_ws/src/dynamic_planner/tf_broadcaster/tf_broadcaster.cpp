@@ -23,8 +23,8 @@ private:
   {
     geometry_msgs::msg::TransformStamped t;
     t.header.stamp = this->now();
-    t.header.frame_id = "map";
-    t.child_frame_id = "base_link"; 
+    t.header.frame_id = "map";  //frame padre
+    t.child_frame_id = "odom";  //frame figlio
 
     t.transform.translation.x = 0.0;
     t.transform.translation.y = 0.0;

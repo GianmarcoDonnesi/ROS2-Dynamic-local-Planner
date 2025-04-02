@@ -12,9 +12,11 @@ find_package(nav_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 
 add_executable(dp_node src/dp_node.cpp)
 add_executable(tf_broadcaster tf_broadcaster/tf_broadcaster.cpp)
+add_executable(controller_node src/controller_node.cpp)
 
 ament_target_dependencies(dp_node
   rclcpp
@@ -29,6 +31,13 @@ ament_target_dependencies(tf_broadcaster
   geometry_msgs
 )
 
+ament_target_dependencies(controller_node
+  rclcpp
+  nav_msgs
+  geometry_msgs
+  tf2_geometry_msgs
+)
+
 install(TARGETS
   dp_node
   DESTINATION lib/${PROJECT_NAME}
@@ -36,6 +45,11 @@ install(TARGETS
 
 install(TARGETS
   tf_broadcaster
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(TARGETS
+  controller_node
   DESTINATION lib/${PROJECT_NAME}
 )
 

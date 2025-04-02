@@ -316,6 +316,9 @@ include("/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_pla
 # install("TARGETS" "tf_broadcaster" "DESTINATION" "lib/dynamic_planner")
 include("/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner/ament_cmake_symlink_install_targets_1_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
+# install("TARGETS" "controller_node" "DESTINATION" "lib/dynamic_planner")
+include("/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner/ament_cmake_symlink_install_targets_2_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+
 # install(FILES "/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/dynamic_planner" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/src/dynamic_planner" FILES "/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/dynamic_planner" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
