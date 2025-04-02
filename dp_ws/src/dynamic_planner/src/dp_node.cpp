@@ -19,13 +19,12 @@ public:
     robot_y_(0.0)
   {
     laser_sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
-      "/scan",
-      10,
-      std::bind(&DynamicPlannerNode::laserCallback, this, std::placeholders::_1));
+      "/scan", 10, std::bind(&DynamicPlannerNode::laserCallback, this, std::placeholders::_1));
 
-    odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>("/odom", 10, std::bind(&DynamicPlannerNode::odomCallback, this, std::placeholders::_1));
+    odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
+      "/odom", 10, std::bind(&DynamicPlannerNode::odomCallback, this, std::placeholders::_1));
 
-    local_map_pub_ = this->create_publisher<nav_msgs::msg::OccupancyGrid>("/local_cost_map", 10);
+    local_map_pub_  = this->create_publisher<nav_msgs::msg::OccupancyGrid>("/local_cost_map", 10);
     global_map_pub_ = this->create_publisher<nav_msgs::msg::OccupancyGrid>("/global_cost_map", 10);
     path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/planned_path", 10);
 
@@ -34,7 +33,7 @@ public:
     initGlobalMap();
 
     timer_ = this->create_wall_timer(
-      std::chrono::seconds(5),
+      std::chrono::seconds(1),
       std::bind(&DynamicPlannerNode::planTimerCallback, this));
   }
 
@@ -58,8 +57,12 @@ private:
   {
     double start_x = robot_x_;
     double start_y = robot_y_;
-    double goal_x  = -robot_x_; 
-    double goal_y  = -robot_y_;
+    double goal_x = -robot_x_;
+    double goal_y = -robot_y_;
+
+    //Debugging
+    RCLCPP_INFO(this->get_logger(), "Planning from (%.2f, %.2f) to (%.2f, %.2f)",
+                start_x, start_y, goal_x, goal_y);
 
     int goal_mx = worldToMapX(goal_x, global_map_);
     int goal_my = worldToMapY(goal_y, global_map_);
@@ -92,7 +95,7 @@ private:
   {
     nav_msgs::msg::OccupancyGrid grid;
     grid.header.stamp = this->now();
-    grid.header.frame_id = "base_link";  
+    grid.header.frame_id = "base_link";
 
     double resolution = 0.05;
     int width = 200;
@@ -106,8 +109,7 @@ private:
 
     grid.data.resize(width * height, 0);
 
-    for (size_t i = 0; i < scan_msg->ranges.size(); i++)
-    {
+    for (size_t i = 0; i < scan_msg->ranges.size(); i++) {
       double angle = scan_msg->angle_min + i * scan_msg->angle_increment;
       double r = scan_msg->ranges[i];
 
@@ -121,40 +123,36 @@ private:
       int mx = static_cast<int>((x - grid.info.origin.position.x) / resolution);
       int my = static_cast<int>((y - grid.info.origin.position.y) / resolution);
 
-      if (mx >= 0 && mx < width && my >= 0 && my < height)
-      {
+      if (mx >= 0 && mx < width && my >= 0 && my < height) {
         int index = my * width + mx;
         grid.data[index] = 100;
       }
     }
-
     return grid;
   }
 
   void updateGlobalMap(const nav_msgs::msg::OccupancyGrid & local_map, double robot_x, double robot_y)
   {
-    for (int ly = 0; ly < (int)local_map.info.height; ++ly)
-    {
-      for (int lx = 0; lx < (int)local_map.info.width; ++lx)
-      {
+    for (int ly = 0; ly < (int)local_map.info.height; ++ly) {
+      for (int lx = 0; lx < (int)local_map.info.width; ++lx) {
         int local_index = ly * local_map.info.width + lx;
-        if (local_map.data[local_index] == 100)
-        {
-          double wx = (lx * local_map.info.resolution) + local_map.info.origin.position.x;
-          double wy = (ly * local_map.info.resolution) + local_map.info.origin.position.y;
+        double wx = (lx * local_map.info.resolution) + local_map.info.origin.position.x;
+        double wy = (ly * local_map.info.resolution) + local_map.info.origin.position.y;
+        double gx = wx + robot_x;
+        double gy = wy + robot_y;
+        int gx_cell = static_cast<int>((gx - global_map_.info.origin.position.x) / global_map_.info.resolution);
+        int gy_cell = static_cast<int>((gy - global_map_.info.origin.position.y) / global_map_.info.resolution);
 
-          double gx = wx + robot_x;
-          double gy = wy + robot_y;
+        if (gx_cell < 0 || gx_cell >= (int)global_map_.info.width ||
+            gy_cell < 0 || gy_cell >= (int)global_map_.info.height)
+          continue;
 
-          int gx_cell = static_cast<int>((gx - global_map_.info.origin.position.x) / global_map_.info.resolution);
-          int gy_cell = static_cast<int>((gy - global_map_.info.origin.position.y) / global_map_.info.resolution);
+        int global_index = gy_cell * global_map_.info.width + gx_cell;
 
-          if (gx_cell >= 0 && gx_cell < (int)global_map_.info.width &&
-              gy_cell >= 0 && gy_cell < (int)global_map_.info.height)
-          {
-            int global_index = gy_cell * global_map_.info.width + gx_cell;
-            global_map_.data[global_index] = 100;
-          }
+        if (local_map.data[local_index] == 100) {
+          global_map_.data[global_index] = 100;
+        } else {
+          global_map_.data[global_index] = 0;
         }
       }
     }
@@ -171,7 +169,6 @@ private:
 
     auto indexOf = [&](int x, int y){ return y * width + x; };
     int goal_index = indexOf(goal_mx, goal_my);
-
     dijkstra_heuristic_[goal_index] = 0.0f;
 
     struct Cell {
@@ -179,6 +176,7 @@ private:
       float dist;
       bool operator>(const Cell &other) const { return dist > other.dist; }
     };
+
     std::priority_queue<Cell, std::vector<Cell>, std::greater<Cell>> pq;
     pq.push({goal_mx, goal_my, 0.0f});
 
@@ -187,37 +185,30 @@ private:
       {1,1}, {1,-1}, {-1,1}, {-1,-1}
     };
 
-    while (!pq.empty())
-    {
+    while (!pq.empty()) {
       Cell current = pq.top();
       pq.pop();
       int cindex = indexOf(current.x, current.y);
-
       float cdist = dijkstra_heuristic_[cindex];
-      if (std::fabs(cdist - current.dist) > 1e-5) {
+      if (std::fabs(cdist - current.dist) > 1e-5)
         continue;
-      }
 
-      for (auto &nb : neighbors)
-      {
+      for (auto &nb : neighbors) {
         int nx = current.x + nb.first;
         int ny = current.y + nb.second;
-        if (nx < 0 || nx >= width || ny < 0 || ny >= height) {
+        if (nx < 0 || nx >= width || ny < 0 || ny >= height)
           continue;
-        }
 
         float step_cost = std::sqrt(nb.first * nb.first + nb.second * nb.second);
         float new_dist = cdist + step_cost;
         int nindex = indexOf(nx, ny);
 
-        if (new_dist < dijkstra_heuristic_[nindex])
-        {
+        if (new_dist < dijkstra_heuristic_[nindex]) {
           dijkstra_heuristic_[nindex] = new_dist;
           pq.push({nx, ny, new_dist});
         }
       }
     }
-
     for (size_t i = 0; i < dijkstra_heuristic_.size(); i++) {
       dijkstra_heuristic_[i] *= resolution;
     }
@@ -229,7 +220,6 @@ private:
     double goal_x,  double goal_y)
   {
     nav_msgs::msg::Path path_result;
-
     int start_mx = worldToMapX(start_x, map);
     int start_my = worldToMapY(start_y, map);
     int goal_mx  = worldToMapX(goal_x, map);
@@ -242,11 +232,9 @@ private:
 
     int width = map.info.width;
     int height = map.info.height;
-
     std::vector<float> g_cost(width * height, std::numeric_limits<float>::infinity());
     std::vector<bool> visited(width * height, false);
     std::vector<int> parent(width * height, -1);
-
     auto indexOf = [&](int x, int y){ return y * width + x; };
     int start_index = indexOf(start_mx, start_my);
     g_cost[start_index] = 0.0f;
@@ -257,7 +245,6 @@ private:
       bool operator>(const Cell &other) const { return f > other.f; }
     };
     std::priority_queue<Cell, std::vector<Cell>, std::greater<Cell>> open_list;
-
     float h_start = dijkstra_heuristic_[start_index];
     open_list.push({start_mx, start_my, h_start});
 
@@ -265,39 +252,33 @@ private:
       {1,0}, {-1,0}, {0,1}, {0,-1},
       {1,1}, {1,-1}, {-1,1}, {-1,-1}
     };
-
     bool found_path = false;
 
-    while (!open_list.empty())
-    {
+    while (!open_list.empty()) {
       Cell current = open_list.top();
       open_list.pop();
       int cindex = indexOf(current.x, current.y);
-
-      if (visited[cindex]) {
+      if (visited[cindex])
         continue;
-      }
-      visited[cindex] = true;
 
+      visited[cindex] = true;
       if (current.x == goal_mx && current.y == goal_my) {
         found_path = true;
         break;
       }
 
-      for (auto &nb : neighbors)
-      {
+      for (auto &nb : neighbors) {
         int nx = current.x + nb.first;
         int ny = current.y + nb.second;
-        if (!validCell(nx, ny, map)) {
+        if (!validCell(nx, ny, map))
           continue;
-        }
+
         int nindex = indexOf(nx, ny);
-        if (visited[nindex]) {
+        if (visited[nindex])
           continue;
-        }
-        if (map.data[nindex] == 100) {
+
+        if (map.data[nindex] == 100)
           continue;
-        }
 
         float step = std::sqrt(nb.first * nb.first + nb.second * nb.second);
         float cost_to_nb = g_cost[cindex] + step;
@@ -310,9 +291,7 @@ private:
         }
       }
     }
-
-    if (found_path)
-    {
+    if (found_path) {
       std::vector<int> path_indices;
       int goal_index = indexOf(goal_mx, goal_my);
       int current = goal_index;
@@ -332,19 +311,19 @@ private:
         path_result.poses.push_back(pose);
       }
     }
-    else
-    {
+    else {
       RCLCPP_WARN(this->get_logger(), "No path found by A*.");
     }
     return path_result;
   }
 
-
   //Helper functions
   bool validCell(int mx, int my, const nav_msgs::msg::OccupancyGrid & map)
   {
-    if (mx < 0 || my < 0) return false;
-    if (mx >= static_cast<int>(map.info.width) || my >= static_cast<int>(map.info.height)) return false;
+    if (mx < 0 || my < 0)
+      return false;
+    if (mx >= static_cast<int>(map.info.width) || my >= static_cast<int>(map.info.height))
+      return false;
     return true;
   }
 
