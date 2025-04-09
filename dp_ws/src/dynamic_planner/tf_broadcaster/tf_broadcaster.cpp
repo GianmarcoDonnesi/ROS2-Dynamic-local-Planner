@@ -16,6 +16,8 @@ public:
     timer_ = this->create_wall_timer(
       100ms,
       std::bind(&MyTfBroadcaster::broadcastTransform, this));
+
+    RCLCPP_INFO(this->get_logger(), "TF Broadcaster Node started.");
   }
 
 private:
@@ -23,8 +25,8 @@ private:
   {
     geometry_msgs::msg::TransformStamped t;
     t.header.stamp = this->now();
-    t.header.frame_id = "map";  //frame padre
-    t.child_frame_id = "odom";  //frame figlio
+    t.header.frame_id = "map";
+    t.child_frame_id = "odom";
 
     t.transform.translation.x = 0.0;
     t.transform.translation.y = 0.0;

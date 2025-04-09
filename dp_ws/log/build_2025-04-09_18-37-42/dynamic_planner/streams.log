@@ -1,0 +1,84 @@
+[0.030s] Invoking command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/src/dynamic_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner
+[0.153s] -- The C compiler identification is GNU 11.4.0
+[0.239s] -- The CXX compiler identification is GNU 11.4.0
+[0.262s] -- Detecting C compiler ABI info
+[0.363s] -- Detecting C compiler ABI info - done
+[0.369s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.369s] -- Detecting C compile features
+[0.371s] -- Detecting C compile features - done
+[0.376s] -- Detecting CXX compiler ABI info
+[0.493s] -- Detecting CXX compiler ABI info - done
+[0.497s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.497s] -- Detecting CXX compile features
+[0.498s] -- Detecting CXX compile features - done
+[0.532s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.724s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.822s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.930s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[1.056s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.073s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.097s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.136s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.173s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.320s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.333s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.539s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.588s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.638s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.663s] -- Looking for pthread.h
+[1.804s] -- Looking for pthread.h - found
+[1.804s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.919s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.919s] -- Found Threads: TRUE  
+[2.077s] -- Found sensor_msgs: 4.8.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.161s] -- Found nav_msgs: 4.8.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[2.198s] -- Found tf2_ros: 0.25.12 (/opt/ros/humble/share/tf2_ros/cmake)
+[2.370s] -- Found tf2_geometry_msgs: 0.25.12 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[2.383s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[2.385s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[2.385s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[2.393s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.463s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.463s] -- Configured cppcheck include dirs: 
+[2.463s] -- Configured cppcheck exclude dirs and/or files: 
+[2.469s] -- Added test 'lint_cmake' to check CMake code style
+[2.469s] -- Added test 'uncrustify' to check C / C++ code style
+[2.469s] -- Configured uncrustify additional arguments: 
+[2.469s] -- Added test 'xmllint' to check XML markup files
+[2.470s] -- Configuring done
+[2.500s] -- Generating done
+[2.511s] -- Build files have been written to: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner
+[2.530s] Invoked command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/src/dynamic_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner
+[2.530s] Invoking command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner -- -j4 -l4
+[2.615s] [ 16%] [32mBuilding CXX object CMakeFiles/dp_node.dir/src/dp_node.cpp.o[0m
+[2.632s] [ 33%] [32mBuilding CXX object CMakeFiles/tf_broadcaster.dir/tf_broadcaster/tf_broadcaster.cpp.o[0m
+[2.635s] [ 50%] [32mBuilding CXX object CMakeFiles/controller_node.dir/src/controller_node.cpp.o[0m
+[9.202s] [ 66%] [32m[1mLinking CXX executable tf_broadcaster[0m
+[9.457s] [ 66%] Built target tf_broadcaster
+[29.730s] [ 83%] [32m[1mLinking CXX executable controller_node[0m
+[32.610s] [ 83%] Built target controller_node
+[33.902s] [100%] [32m[1mLinking CXX executable dp_node[0m
+[34.937s] [100%] Built target dp_node
+[34.975s] Invoked command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner -- -j4 -l4
+[35.002s] Invoking command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner
+[35.016s] -- Install configuration: ""
+[35.020s] -- Execute custom install script
+[35.028s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/lib/dynamic_planner/dp_node
+[35.058s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/lib/dynamic_planner/tf_broadcaster
+[35.073s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/lib/dynamic_planner/controller_node
+[35.095s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/ament_index/resource_index/package_run_dependencies/dynamic_planner
+[35.138s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/ament_index/resource_index/parent_prefix_path/dynamic_planner
+[35.414s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/ament_prefix_path.sh
+[35.461s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/ament_prefix_path.dsv
+[35.540s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/path.sh
+[35.589s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/path.dsv
+[35.611s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.bash
+[35.628s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.sh
+[35.643s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.zsh
+[35.672s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.dsv
+[35.686s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/package.dsv
+[35.703s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/ament_index/resource_index/packages/dynamic_planner
+[35.717s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/cmake/dynamic_plannerConfig.cmake
+[35.733s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/cmake/dynamic_plannerConfig-version.cmake
+[35.748s] -- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/package.xml
+[35.774s] Invoked command in '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner

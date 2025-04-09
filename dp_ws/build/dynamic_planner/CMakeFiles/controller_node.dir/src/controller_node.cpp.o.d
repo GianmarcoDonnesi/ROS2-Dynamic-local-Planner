@@ -647,6 +647,12 @@ CMakeFiles/controller_node.dir/src/controller_node.cpp.o: \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist__traits.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
  /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__type_support.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/laser_scan.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__struct.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__builder.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__traits.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__type_support.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/twist.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist__builder.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist__type_support.hpp \
@@ -654,6 +660,12 @@ CMakeFiles/controller_node.dir/src/controller_node.cpp.o: \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_stamped.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__builder.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__type_support.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/empty.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__struct.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__builder.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__traits.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/empty__type_support.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
  /opt/ros/humble/include/tf2/tf2/LinearMath/Matrix3x3.h \
  /opt/ros/humble/include/tf2/tf2/LinearMath/Matrix3x3.hpp \
  /opt/ros/humble/include/tf2/tf2/LinearMath/Vector3.hpp \
@@ -748,7 +760,4 @@ CMakeFiles/controller_node.dir/src/controller_node.cpp.o: \
  /opt/ros/humble/include/tf2/tf2/LinearMath/Matrix3x3.hpp \
  /opt/ros/humble/include/tf2/tf2/LinearMath/Vector3.hpp \
  /opt/ros/humble/include/tf2_ros/tf2_ros/buffer_interface.h \
- /opt/ros/humble/include/tf2_ros/tf2_ros/visibility_control.h \
- /usr/include/c++/11/queue /usr/include/c++/11/deque \
- /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
- /usr/include/c++/11/bits/stl_queue.h
+ /opt/ros/humble/include/tf2_ros/tf2_ros/visibility_control.h

@@ -1,0 +1,305 @@
+[0.000000] (-) TimerEvent: {}
+[0.000471] (dynamic_planner) JobQueued: {'identifier': 'dynamic_planner', 'dependencies': OrderedDict()}
+[0.000582] (dynamic_planner) JobStarted: {'identifier': 'dynamic_planner'}
+[0.028714] (dynamic_planner) JobProgress: {'identifier': 'dynamic_planner', 'progress': 'cmake'}
+[0.028899] (dynamic_planner) Command: {'cmd': ['/usr/bin/cmake', '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/src/dynamic_planner', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner'], 'cwd': '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_GB:en'), ('USER', 'giaggi'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/giaggi'), ('OLDPWD', '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_US.UTF-8'), ('SYSTEMD_EXEC_PID', '2776'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'giaggi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'giaggi'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/Ubuntu22:@/tmp/.ICE-unix/2741,unix/Ubuntu22:/tmp/.ICE-unix/2741'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/162502fa_47fc_47fd_8cad_d57403a74b84'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_GB.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.304Z42'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.473'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.097939] (-) TimerEvent: {}
+[0.153380] (dynamic_planner) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.198126] (-) TimerEvent: {}
+[0.239269] (dynamic_planner) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.262526] (dynamic_planner) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.299134] (-) TimerEvent: {}
+[0.363164] (dynamic_planner) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.369522] (dynamic_planner) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.369695] (dynamic_planner) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.371202] (dynamic_planner) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.376084] (dynamic_planner) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.399821] (-) TimerEvent: {}
+[0.493240] (dynamic_planner) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.497376] (dynamic_planner) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.497569] (dynamic_planner) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.498161] (dynamic_planner) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.500305] (-) TimerEvent: {}
+[0.532668] (dynamic_planner) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.601033] (-) TimerEvent: {}
+[0.702817] (-) TimerEvent: {}
+[0.724073] (dynamic_planner) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.803182] (-) TimerEvent: {}
+[0.822280] (dynamic_planner) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.903736] (-) TimerEvent: {}
+[0.930083] (dynamic_planner) StdoutLine: {'line': b'-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.005788] (-) TimerEvent: {}
+[1.055876] (dynamic_planner) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.073031] (dynamic_planner) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.097669] (dynamic_planner) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.107915] (-) TimerEvent: {}
+[1.136073] (dynamic_planner) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.173728] (dynamic_planner) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.208472] (-) TimerEvent: {}
+[1.310346] (-) TimerEvent: {}
+[1.320625] (dynamic_planner) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.332783] (dynamic_planner) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.411178] (-) TimerEvent: {}
+[1.512189] (-) TimerEvent: {}
+[1.538896] (dynamic_planner) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[1.588150] (dynamic_planner) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[1.616342] (-) TimerEvent: {}
+[1.637382] (dynamic_planner) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.663736] (dynamic_planner) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.716497] (-) TimerEvent: {}
+[1.804272] (dynamic_planner) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.804692] (dynamic_planner) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.817697] (-) TimerEvent: {}
+[1.919359] (dynamic_planner) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.919518] (-) TimerEvent: {}
+[1.919600] (dynamic_planner) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[2.019713] (-) TimerEvent: {}
+[2.077353] (dynamic_planner) StdoutLine: {'line': b'-- Found sensor_msgs: 4.8.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[2.119871] (-) TimerEvent: {}
+[2.161270] (dynamic_planner) StdoutLine: {'line': b'-- Found nav_msgs: 4.8.0 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[2.198593] (dynamic_planner) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.12 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[2.220315] (-) TimerEvent: {}
+[2.321122] (-) TimerEvent: {}
+[2.369716] (dynamic_planner) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.25.12 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)\n'}
+[2.383278] (dynamic_planner) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[2.385017] (dynamic_planner) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[2.385183] (dynamic_planner) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[2.393608] (dynamic_planner) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[2.437527] (-) TimerEvent: {}
+[2.463451] (dynamic_planner) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[2.463806] (dynamic_planner) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[2.463994] (dynamic_planner) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[2.469215] (dynamic_planner) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.469386] (dynamic_planner) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[2.469434] (dynamic_planner) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[2.469475] (dynamic_planner) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.470222] (dynamic_planner) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.500414] (dynamic_planner) StdoutLine: {'line': b'-- Generating done\n'}
+[2.511144] (dynamic_planner) StdoutLine: {'line': b'-- Build files have been written to: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner\n'}
+[2.530254] (dynamic_planner) CommandEnded: {'returncode': 0}
+[2.530679] (dynamic_planner) JobProgress: {'identifier': 'dynamic_planner', 'progress': 'build'}
+[2.530700] (dynamic_planner) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner', '--', '-j4', '-l4'], 'cwd': '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_GB:en'), ('USER', 'giaggi'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/giaggi'), ('OLDPWD', '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_US.UTF-8'), ('SYSTEMD_EXEC_PID', '2776'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'giaggi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'giaggi'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/Ubuntu22:@/tmp/.ICE-unix/2741,unix/Ubuntu22:/tmp/.ICE-unix/2741'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/162502fa_47fc_47fd_8cad_d57403a74b84'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_GB.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.304Z42'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.473'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[2.538563] (-) TimerEvent: {}
+[2.614681] (dynamic_planner) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/dp_node.dir/src/dp_node.cpp.o\x1b[0m\n'}
+[2.631493] (dynamic_planner) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/tf_broadcaster.dir/tf_broadcaster/tf_broadcaster.cpp.o\x1b[0m\n'}
+[2.635380] (dynamic_planner) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/controller_node.dir/src/controller_node.cpp.o\x1b[0m\n'}
+[2.638796] (-) TimerEvent: {}
+[2.740590] (-) TimerEvent: {}
+[2.845978] (-) TimerEvent: {}
+[2.946558] (-) TimerEvent: {}
+[3.047046] (-) TimerEvent: {}
+[3.147676] (-) TimerEvent: {}
+[3.248751] (-) TimerEvent: {}
+[3.349875] (-) TimerEvent: {}
+[3.451524] (-) TimerEvent: {}
+[3.552383] (-) TimerEvent: {}
+[3.653492] (-) TimerEvent: {}
+[3.755344] (-) TimerEvent: {}
+[3.856771] (-) TimerEvent: {}
+[3.957625] (-) TimerEvent: {}
+[4.059195] (-) TimerEvent: {}
+[4.159638] (-) TimerEvent: {}
+[4.264098] (-) TimerEvent: {}
+[4.390632] (-) TimerEvent: {}
+[5.063404] (-) TimerEvent: {}
+[5.170286] (-) TimerEvent: {}
+[5.276043] (-) TimerEvent: {}
+[5.700972] (-) TimerEvent: {}
+[5.985136] (-) TimerEvent: {}
+[7.061626] (-) TimerEvent: {}
+[7.853661] (-) TimerEvent: {}
+[8.055473] (-) TimerEvent: {}
+[8.184434] (-) TimerEvent: {}
+[9.052469] (-) TimerEvent: {}
+[9.157699] (-) TimerEvent: {}
+[9.202559] (dynamic_planner) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable tf_broadcaster\x1b[0m\n'}
+[9.457478] (dynamic_planner) StdoutLine: {'line': b'[ 66%] Built target tf_broadcaster\n'}
+[9.457816] (-) TimerEvent: {}
+[10.066639] (-) TimerEvent: {}
+[11.042462] (-) TimerEvent: {}
+[12.058520] (-) TimerEvent: {}
+[13.044442] (-) TimerEvent: {}
+[14.048166] (-) TimerEvent: {}
+[14.851546] (-) TimerEvent: {}
+[14.972061] (-) TimerEvent: {}
+[15.085292] (-) TimerEvent: {}
+[15.215792] (-) TimerEvent: {}
+[15.318110] (-) TimerEvent: {}
+[15.420128] (-) TimerEvent: {}
+[15.567985] (-) TimerEvent: {}
+[15.677778] (-) TimerEvent: {}
+[15.837687] (-) TimerEvent: {}
+[15.939187] (-) TimerEvent: {}
+[16.042603] (-) TimerEvent: {}
+[16.144556] (-) TimerEvent: {}
+[16.246093] (-) TimerEvent: {}
+[16.350880] (-) TimerEvent: {}
+[16.458260] (-) TimerEvent: {}
+[16.559216] (-) TimerEvent: {}
+[16.660272] (-) TimerEvent: {}
+[16.760958] (-) TimerEvent: {}
+[16.862238] (-) TimerEvent: {}
+[16.963179] (-) TimerEvent: {}
+[17.070392] (-) TimerEvent: {}
+[17.171198] (-) TimerEvent: {}
+[17.277269] (-) TimerEvent: {}
+[17.378815] (-) TimerEvent: {}
+[17.486039] (-) TimerEvent: {}
+[17.597398] (-) TimerEvent: {}
+[17.705154] (-) TimerEvent: {}
+[17.806325] (-) TimerEvent: {}
+[17.908523] (-) TimerEvent: {}
+[18.009351] (-) TimerEvent: {}
+[18.119135] (-) TimerEvent: {}
+[18.220799] (-) TimerEvent: {}
+[18.330555] (-) TimerEvent: {}
+[18.431920] (-) TimerEvent: {}
+[18.539691] (-) TimerEvent: {}
+[18.652744] (-) TimerEvent: {}
+[18.754284] (-) TimerEvent: {}
+[18.856319] (-) TimerEvent: {}
+[18.957276] (-) TimerEvent: {}
+[19.059097] (-) TimerEvent: {}
+[19.159591] (-) TimerEvent: {}
+[19.260104] (-) TimerEvent: {}
+[19.361337] (-) TimerEvent: {}
+[19.462183] (-) TimerEvent: {}
+[19.563093] (-) TimerEvent: {}
+[19.664196] (-) TimerEvent: {}
+[19.765732] (-) TimerEvent: {}
+[19.866466] (-) TimerEvent: {}
+[19.968066] (-) TimerEvent: {}
+[20.070673] (-) TimerEvent: {}
+[20.172073] (-) TimerEvent: {}
+[20.273989] (-) TimerEvent: {}
+[20.390972] (-) TimerEvent: {}
+[20.493026] (-) TimerEvent: {}
+[20.598882] (-) TimerEvent: {}
+[20.732498] (-) TimerEvent: {}
+[20.833779] (-) TimerEvent: {}
+[20.942085] (-) TimerEvent: {}
+[21.055123] (-) TimerEvent: {}
+[21.173294] (-) TimerEvent: {}
+[21.274428] (-) TimerEvent: {}
+[21.425424] (-) TimerEvent: {}
+[21.548497] (-) TimerEvent: {}
+[21.702587] (-) TimerEvent: {}
+[21.804111] (-) TimerEvent: {}
+[21.935415] (-) TimerEvent: {}
+[22.040443] (-) TimerEvent: {}
+[22.152108] (-) TimerEvent: {}
+[22.254432] (-) TimerEvent: {}
+[22.382556] (-) TimerEvent: {}
+[22.497479] (-) TimerEvent: {}
+[22.625877] (-) TimerEvent: {}
+[22.774602] (-) TimerEvent: {}
+[22.892268] (-) TimerEvent: {}
+[22.998068] (-) TimerEvent: {}
+[23.106896] (-) TimerEvent: {}
+[23.232387] (-) TimerEvent: {}
+[23.338432] (-) TimerEvent: {}
+[23.439206] (-) TimerEvent: {}
+[23.542360] (-) TimerEvent: {}
+[23.673293] (-) TimerEvent: {}
+[23.776364] (-) TimerEvent: {}
+[23.890749] (-) TimerEvent: {}
+[24.007398] (-) TimerEvent: {}
+[24.110496] (-) TimerEvent: {}
+[24.236682] (-) TimerEvent: {}
+[24.344853] (-) TimerEvent: {}
+[24.447780] (-) TimerEvent: {}
+[24.555293] (-) TimerEvent: {}
+[24.656328] (-) TimerEvent: {}
+[24.767272] (-) TimerEvent: {}
+[24.868092] (-) TimerEvent: {}
+[24.968633] (-) TimerEvent: {}
+[25.102389] (-) TimerEvent: {}
+[25.227342] (-) TimerEvent: {}
+[25.335331] (-) TimerEvent: {}
+[25.442730] (-) TimerEvent: {}
+[25.553416] (-) TimerEvent: {}
+[25.710393] (-) TimerEvent: {}
+[25.831454] (-) TimerEvent: {}
+[25.936728] (-) TimerEvent: {}
+[26.044095] (-) TimerEvent: {}
+[26.146368] (-) TimerEvent: {}
+[26.261915] (-) TimerEvent: {}
+[26.370887] (-) TimerEvent: {}
+[26.478959] (-) TimerEvent: {}
+[26.589152] (-) TimerEvent: {}
+[26.720899] (-) TimerEvent: {}
+[26.862740] (-) TimerEvent: {}
+[26.964055] (-) TimerEvent: {}
+[27.070369] (-) TimerEvent: {}
+[27.171562] (-) TimerEvent: {}
+[27.272932] (-) TimerEvent: {}
+[27.376311] (-) TimerEvent: {}
+[27.485783] (-) TimerEvent: {}
+[27.592067] (-) TimerEvent: {}
+[29.376633] (-) TimerEvent: {}
+[29.527312] (-) TimerEvent: {}
+[29.634734] (-) TimerEvent: {}
+[29.729409] (dynamic_planner) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable controller_node\x1b[0m\n'}
+[29.736252] (-) TimerEvent: {}
+[29.838186] (-) TimerEvent: {}
+[29.943867] (-) TimerEvent: {}
+[30.086677] (-) TimerEvent: {}
+[30.196593] (-) TimerEvent: {}
+[30.311963] (-) TimerEvent: {}
+[30.427573] (-) TimerEvent: {}
+[30.533371] (-) TimerEvent: {}
+[30.635708] (-) TimerEvent: {}
+[30.737611] (-) TimerEvent: {}
+[30.845313] (-) TimerEvent: {}
+[30.946862] (-) TimerEvent: {}
+[31.070724] (-) TimerEvent: {}
+[32.074667] (-) TimerEvent: {}
+[32.178642] (-) TimerEvent: {}
+[32.280472] (-) TimerEvent: {}
+[32.385485] (-) TimerEvent: {}
+[32.491777] (-) TimerEvent: {}
+[32.610538] (dynamic_planner) StdoutLine: {'line': b'[ 83%] Built target controller_node\n'}
+[32.610940] (-) TimerEvent: {}
+[33.075866] (-) TimerEvent: {}
+[33.774844] (-) TimerEvent: {}
+[33.880074] (-) TimerEvent: {}
+[33.902292] (dynamic_planner) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable dp_node\x1b[0m\n'}
+[33.986078] (-) TimerEvent: {}
+[34.816428] (-) TimerEvent: {}
+[34.918315] (-) TimerEvent: {}
+[34.936775] (dynamic_planner) StdoutLine: {'line': b'[100%] Built target dp_node\n'}
+[34.974443] (dynamic_planner) CommandEnded: {'returncode': 0}
+[34.981089] (dynamic_planner) JobProgress: {'identifier': 'dynamic_planner', 'progress': 'install'}
+[35.002007] (dynamic_planner) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner'], 'cwd': '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_GB:en'), ('USER', 'giaggi'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/giaggi'), ('OLDPWD', '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_US.UTF-8'), ('SYSTEMD_EXEC_PID', '2776'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'giaggi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'giaggi'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/Ubuntu22:@/tmp/.ICE-unix/2741,unix/Ubuntu22:/tmp/.ICE-unix/2741'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/162502fa_47fc_47fd_8cad_d57403a74b84'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_GB.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.304Z42'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.473'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/build/dynamic_planner'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[35.015828] (dynamic_planner) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[35.018814] (-) TimerEvent: {}
+[35.020181] (dynamic_planner) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[35.028599] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/lib/dynamic_planner/dp_node\n'}
+[35.058338] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/lib/dynamic_planner/tf_broadcaster\n'}
+[35.072811] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/lib/dynamic_planner/controller_node\n'}
+[35.095763] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/ament_index/resource_index/package_run_dependencies/dynamic_planner\n'}
+[35.119412] (-) TimerEvent: {}
+[35.137795] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/ament_index/resource_index/parent_prefix_path/dynamic_planner\n'}
+[35.221174] (-) TimerEvent: {}
+[35.322116] (-) TimerEvent: {}
+[35.414775] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/ament_prefix_path.sh\n'}
+[35.423417] (-) TimerEvent: {}
+[35.460130] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/ament_prefix_path.dsv\n'}
+[35.525142] (-) TimerEvent: {}
+[35.539883] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/path.sh\n'}
+[35.589402] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/environment/path.dsv\n'}
+[35.611579] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.bash\n'}
+[35.625722] (-) TimerEvent: {}
+[35.627723] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.sh\n'}
+[35.643369] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.zsh\n'}
+[35.671324] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/local_setup.dsv\n'}
+[35.686386] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/package.dsv\n'}
+[35.702389] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/ament_index/resource_index/packages/dynamic_planner\n'}
+[35.717673] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/cmake/dynamic_plannerConfig.cmake\n'}
+[35.727224] (-) TimerEvent: {}
+[35.732763] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/cmake/dynamic_plannerConfig-version.cmake\n'}
+[35.748502] (dynamic_planner) StdoutLine: {'line': b'-- Symlinking: /home/giaggi/Desktop/ROS2-Dynamic-local-Planner/dp_ws/install/dynamic_planner/share/dynamic_planner/package.xml\n'}
+[35.773824] (dynamic_planner) CommandEnded: {'returncode': 0}
+[35.828746] (-) TimerEvent: {}
+[35.850821] (dynamic_planner) JobEnded: {'identifier': 'dynamic_planner', 'rc': 0}
+[35.854805] (-) EventReactorShutdown: {}

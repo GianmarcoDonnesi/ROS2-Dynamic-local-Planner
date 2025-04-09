@@ -12,6 +12,8 @@ find_package(nav_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(std_msgs REQUIRED)
 
 add_executable(dp_node src/dp_node.cpp)
 add_executable(tf_broadcaster tf_broadcaster/tf_broadcaster.cpp)
@@ -22,6 +24,9 @@ ament_target_dependencies(dp_node
   sensor_msgs
   nav_msgs
   geometry_msgs
+  std_msgs
+  tf2_geometry_msgs
+  tf2
 )
 
 ament_target_dependencies(tf_broadcaster
@@ -35,6 +40,8 @@ ament_target_dependencies(controller_node
   nav_msgs
   geometry_msgs
   tf2_geometry_msgs
+  std_msgs
+  sensor_msgs
 )
 
 install(TARGETS
@@ -55,8 +62,6 @@ install(TARGETS
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
-  set(ament_cmake_copyright_FOUND TRUE)
-  set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
 
