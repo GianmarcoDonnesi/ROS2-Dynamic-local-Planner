@@ -1,7 +1,9 @@
 # ROS2-Dynamic-local-Planner
 
-<img src="https://github.com/GianmarcoDonnesi/ROS2-Dynamic-local-Planner/blob/main/demo.png" alt="Example Image" width="700"/>
+<img src="https://github.com/GianmarcoDonnesi/ROS2-Dynamic-local-Planner/blob/main/demo.png" alt="Example Image" width="500"/>
+
 ---
+
 ## Project Goal
 Welcome to the repository containing the code developed for the final project of the Robot Programming course (A.Y. 23/24)
 This project implements a **dynamic path planning** system for mobile robots using ROS 2 (Humble Hawksbill). The planner is designed to operate in unknown or partially known environments, updating its internal map based on data received from a Lidar sensor.
