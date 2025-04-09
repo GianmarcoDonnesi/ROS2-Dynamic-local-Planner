@@ -1,4 +1,4 @@
-# ROS2-Dynamic-local-Planner
+# ROS2 Dynamic local Planner: A Dynamic Path Planning and Reactive Control System for Mobile Robots in Unknown Environments
 
 <img src="https://github.com/GianmarcoDonnesi/ROS2-Dynamic-local-Planner/blob/main/demo.png" alt="Example Image" width="500"/>
 
