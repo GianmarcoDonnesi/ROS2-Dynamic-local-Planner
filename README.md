@@ -1,5 +1,6 @@
 # ROS2-Dynamic-local-Planner
 
+<img src="https://github.com/GianmarcoDonnesi/ROS2-Dynamic-local-Planner/blob/main/demo.png" alt="Example Image" width="700"/>
 ---
 ## Project Goal
 Welcome to the repository containing the code developed for the final project of the Robot Programming course (A.Y. 23/24)
@@ -94,7 +95,7 @@ Then follow these steps to correctly launch the simulation and the nodes of the 
 
 **Steps:**
 
-1.  **Terminal 1 - Start Gazebo Simulation:**
+**Terminal 1 - Start Gazebo Simulation:**
     * Set the robot model and launch Gazebo (e.g., with the `turtlebot3_house` world):
         ```bash
         export TURTLEBOT3_MODEL=burger
@@ -102,25 +103,25 @@ Then follow these steps to correctly launch the simulation and the nodes of the 
         ```
     * **Wait** for the Gazebo environment to load completely.
 
-2.  **Terminal 2 - Start TF Broadcaster:**
+**Terminal 2 - Start TF Broadcaster:**
     * Launch the node that publishes the `map` -> `odom` transform (using simulation time):
         ```bash
         ros2 run dynamic_planner tf_broadcaster --ros-args --param use_sim_time:=true
         ```
 
-3.  **Terminal 3 - Start Planner Node (`dp_node`):**
+**Terminal 3 - Start Planner Node (`dp_node`):**
     * Launch the planning node (using simulation time):
         ```bash
         ros2 run dynamic_planner dp_node --ros-args --param use_sim_time:=true
         ```
 
-4.  **Terminal 4 - Start Controller Node (`controller_node`):**
+**Terminal 4 - Start Controller Node (`controller_node`):**
     * Launch the control node (using simulation time):
         ```bash
         ros2 run dynamic_planner controller_node --ros-args --param use_sim_time:=true
         ```
 
-5.  **Terminal 5 - Start RViz (Optional but Recommended):**
+**Terminal 5 - Start RViz (Optional but Recommended):**
     * Launch the visualization tool:
         ```bash
         rviz2
@@ -130,7 +131,7 @@ Then follow these steps to correctly launch the simulation and the nodes of the 
         * Add the necessary displays: `TF`, `RobotModel`, `LaserScan` (Topic: `/scan`), `Map` (Topic: `/global_distance_map_viz`, Color Scheme: `costmap`), `Path` (Topic: `/planned_path`).
         * Check the `Status` of each display.
 
-6.  **Terminal 6 (or RViz) - Send Goal:**
+**Terminal 6 (or RViz) - Send Goal:**
     * **After** all nodes are running and RViz is showing initial data:
     * Use the `Nav2 Goal` tool in RViz to graphically set a goal in the `map` frame.
     * Alternatively, from a terminal (remember `Ctrl+C` after the goal is sent/received):
@@ -141,7 +142,5 @@ Then follow these steps to correctly launch the simulation and the nodes of the 
 
 ---
 
-## **Author and License**
-Gianmarco Donnesi | [donnesi.2152311@studenti.uniroma1.it](mailto:donnesi.2152311@studenti.uniroma1.it)
-
+## **License**
 This project is licensed under the [GPL-3.0 License](LICENSE). See the file for more details.
